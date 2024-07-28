@@ -1,24 +1,33 @@
-# README
+# Meteo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WeatherFetcher is a Ruby on Rails application that provides real-time and 3 day weather information for any given address. The application uses [OpenWeatherMap API](https://openweathermap.org/api) to fetch weather data and [Nominatim API](https://nominatim.openstreetmap.org/) for geocoding addresses.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Converts addresses to geographical coordinates.
+- Fetches weather data based on geographical coordinates.
+- Caches location and weather data to increase speed and reduce API calls
+- Displays weather information including temperature, min temperature, max temperature and forecast.
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+Before you begin, ensure you have met the following requirements:
 
-* Database creation
+- Ruby version 3.3.0
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Follow these steps to install WeatherFetcher:
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Clone the repository:
 
-* Deployment instructions
+   ```bash
+   git clone https://github.com/chilno/meteo.git
+   cd meteo
+   ```
+2. Run docker-compose:
 
-* ...
+   ```bash
+   docker-compose up -d
+   ```
+3. Navigate to `127.0.0.1:3000`

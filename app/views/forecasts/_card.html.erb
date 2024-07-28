@@ -1,0 +1,26 @@
+<div class="
+  flex
+  flex-col
+  rounded
+  <%= current ? 'bg-slate-500' : 'bg-slate-100' %>
+  <%= current ? 'text-white' : 'text-black' %>
+  p-4
+  w-full"
+>
+  <div class="font-bold text-xl"><%= day_of_week(day[:date], current) %></div>
+  <div class="text-sm"><%= date_format(day[:date], current) %></div>
+  <div class="flex flex-row items-center justify-center mt-6">
+    <div class="font-medium text-6xl"><%= formatted_temperature day[:temperature] %>°</div>
+    <div class="flex flex-col items-center ml-6">
+      <div><%= day[:description].capitalize%></div>
+      <div class="mt-1">
+        <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+        <span class="text-sm font-light"><%= formatted_temperature day[:temperature_min]%>°F</span>
+      </div>
+      <div>
+        <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+        <span class="text-sm font-light"><%= formatted_temperature day[:temperature_max]%>°F</span>
+      </div>
+    </div>
+  </div>
+</div>

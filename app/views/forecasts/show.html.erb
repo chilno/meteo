@@ -1,0 +1,37 @@
+
+
+<div class=" flex flex-col gap-4 items-center justify-cente w-full">
+  <%= render 'shared/flash' %>
+  <%= render partial: 'form'%>
+
+  <% if defined?(@weather) %>
+    <h1 class="text-2xl font-bold"><%= @geocode[:full_address] %></h1>
+    <%= render partial: 'card', locals: {day: @weather, current: true} %>
+    <div class="flex items-center justify-center gap-4 w-full">
+      <%= render partial: 'card', collection: next_days(@weather[:next_days]), as: :day, locals: {current: false} %>
+    </div>
+    <div class="flex items-center justify-center gap-4 w-full">
+      <h2 class="text-2xl font-bold">Location Data from Cache? </h2>
+      <h2 class="
+        <%= @address_cache_exists ? 'text-green-500' : 'text-red-500' %>
+        text-2xl
+        font-bold"
+      >
+        <%= @address_cache_exists %>
+      </h2>
+    </div>
+    <div class="flex items-center justify-center gap-4 w-full">
+      <h2 class="text-2xl font-bold">Weather Data from Cache? </h2>
+          <h2 class="
+        <%= @weather_cache_exists ? 'text-green-500' : 'text-red-500' %>
+        text-2xl
+        font-bold"
+      >
+        <%= @weather_cache_exists %>
+      </h2>
+    </div>
+  <% end %>
+</div>
+
+
+

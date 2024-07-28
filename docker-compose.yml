@@ -1,0 +1,23 @@
+version: "3"
+services:
+  memcached:
+    image: memcached
+    networks:
+      - internal
+  meteo:
+    image: meteo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RAILS_MASTER_KEY=6e3f09f1821d6c45f5d41af23028d260
+    ports:
+      - "3000:3000"
+    networks:
+      - internal
+    depends_on:
+      - memcached
+
+networks:
+  internal:
+    driver: bridge
