@@ -14,20 +14,31 @@ WeatherFetcher is a Ruby on Rails application that provides real-time and 3 day 
 Before you begin, ensure you have met the following requirements:
 
 - Ruby version 3.3.0
+- Memcached running on port
+
+## Docker Installation
+
+Follow these steps to install **Meteo** locally
+
+1. Clone
 
 ## Installation
 
-Follow these steps to install WeatherFetcher:
+Follow these steps to install **Meteo**:
 
 1. Clone the repository:
-
+   
    ```bash
    git clone https://github.com/chilno/meteo.git
    cd meteo
    ```
-2. Run docker-compose:
+   
+   ## Docker
+2. 1. Run docker-compose:
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
+
 3. Navigate to `127.0.0.1:3000`
+
