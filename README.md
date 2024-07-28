@@ -14,7 +14,6 @@ Meteo is a Ruby on Rails application that provides real-time and 3 day weather i
 Before you begin, ensure you have met the following requirements:
 
 - Ruby version 3.3.0
-- Memcached running on default port (No needed for Docker Installation)
 
 ## Installation
 
