@@ -1,6 +1,6 @@
 # Meteo
 
-WeatherFetcher is a Ruby on Rails application that provides real-time and 3 day weather information for any given address. The application uses [OpenWeatherMap API](https://openweathermap.org/api) to fetch weather data and [Nominatim API](https://nominatim.openstreetmap.org/) for geocoding addresses.
+Meteo is a Ruby on Rails application that provides real-time and 3 day weather information for any given address. The application uses [OpenWeatherMap API](https://openweathermap.org/api) to fetch weather data and [Nominatim API](https://nominatim.openstreetmap.org/) for geocoding addresses.
 
 ## Features
 
@@ -14,31 +14,43 @@ WeatherFetcher is a Ruby on Rails application that provides real-time and 3 day 
 Before you begin, ensure you have met the following requirements:
 
 - Ruby version 3.3.0
-- Memcached running on port
-
-## Docker Installation
-
-Follow these steps to install **Meteo** locally
-
-1. Clone
+- Memcached running on default port (No needed for Docker Installation)
 
 ## Installation
 
 Follow these steps to install **Meteo**:
 
 1. Clone the repository:
-   
+
    ```bash
    git clone https://github.com/chilno/meteo.git
    cd meteo
    ```
-   
-   ## Docker
-2. 1. Run docker-compose:
 
-```bash
-docker-compose up -d
-```
+   ## Docker (Includes Memcached)
 
-3. Navigate to `127.0.0.1:3000`
 
+   1. Run docker-compose:
+
+      ```bash
+      docker-compose up -d
+      ```
+   2. Navigate to `127.0.0.1:3000`
+
+   ## Development (Uses memory store for caching)
+
+   1. Install dependencies:
+
+      ```bash
+      bundle install
+      ```
+   2. Start server
+
+      ```bash
+      rails s
+      ```
+   3. Navigate  to `127.0.0.1:3000`
+
+## Testing
+
+Run `bundle exec rspec`
