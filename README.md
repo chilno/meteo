@@ -46,7 +46,7 @@ Follow these steps to install **Meteo**:
    2. Start server
 
       ```bash
-      rails s
+      ./bin/dev
       ```
    3. Navigate  to `127.0.0.1:3000`
 
